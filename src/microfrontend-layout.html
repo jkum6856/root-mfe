@@ -1,0 +1,41 @@
+<single-spa-router>
+  <!--
+
+    This is the single-spa Layout Definition for your microfrontends.
+    See https://single-spa.js.org/docs/layout-definition/ for more information.
+
+  -->
+
+  <!-- Example layouts you might find helpful:
+
+  <nav>
+    <application name="@org/navbar"></application>
+  </nav>
+  <route path="settings">
+    <application name="@org/settings"></application>
+  </route>
+
+  -->
+
+  <!-- Cart service always loaded for authentication and cart management -->
+  <application name="@syscolabs/cart-checkout"></application>
+  
+  <main>
+    <route default>
+      <application name="@syscolabs/home-catalog"></application>
+    </route>
+
+    <route path="supplier">
+      <application name="@syscolabs/supplier-portal"></application>
+    </route>
+    <route path="approval">
+      <application name="@syscolabs/approval-management"></application>
+    </route>
+    <route path="products">
+      <application name="@syscolabs/product-search"></application>
+    </route>
+    <route path="cart">
+      <!-- Cart UI will be shown here, but the service is always running -->
+    </route>
+  </main>
+</single-spa-router>
